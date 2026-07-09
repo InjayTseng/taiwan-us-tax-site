@@ -19,10 +19,12 @@ html = f"""<!doctype html>
 <link rel="icon" href="data:image/png;base64,{logo_b64}">
 <style>
 :root{{
-  --paper:#E8E5DC; --paper-hi:#F1EEE6; --white:#FFF;
-  --ink:#1A1712; --ink-soft:#3A342B; --stone:#6E675B; --stone-2:#948B7B;
-  --line:#CFC8B8; --line-2:#BCB29F;
-  --cinnabar:#B23A2C; --cinnabar-deep:#8A2A1F;
+  /* 甲 · 藍墨紅章 Blue Ink · Red Seal — 藍墨書寫,紅泥落印;黑白印信不動 */
+  --paper:#F5F6F7; --paper-hi:#FBFCFD; --white:#FFF;
+  --ink:#101214; --ink-soft:#33383D; --stone:#5F6A72; --stone-2:#8B959C;
+  --line:#D4DADD; --line-2:#BAC3C8;
+  --indigo:#1F4E79; --indigo-deep:#153A5B;
+  --seal:#9E3B31; --seal-deep:#7C2D24;
   --kai:"Kaiti TC","STKaiti","BiauKai","Songti TC","Noto Serif TC",serif;
   --sans:"PingFang TC","Noto Sans TC",-apple-system,sans-serif;
   --cond:"Arial Narrow","Helvetica Neue Condensed","Roboto Condensed",sans-serif;
@@ -34,17 +36,17 @@ body{{background:var(--paper);color:var(--ink);font-family:var(--sans);line-heig
 
 /* Hero */
 .hero{{text-align:center;padding:3.2rem 0 2.2rem}}
-.hero img{{width:150px;height:150px;filter:drop-shadow(0 16px 30px rgba(26,23,18,.3))}}
+.hero img{{width:150px;height:150px;filter:drop-shadow(0 16px 30px rgba(16,18,20,.3))}}
 .hero h1{{font-family:var(--kai);font-size:2.1rem;font-weight:700;margin-top:1.2rem;letter-spacing:.12em}}
 .hero .en{{margin-top:.4rem}}
 .hero p.essence{{margin:1.4rem auto 0;max-width:34em;color:var(--ink-soft);text-align:left}}
-.badge{{display:inline-block;margin-top:1.2rem;border:1px solid var(--cinnabar);color:var(--cinnabar-deep);
+.badge{{display:inline-block;margin-top:1.2rem;border:1px solid var(--seal);color:var(--seal-deep);
   font-size:.78rem;padding:.25rem .9rem;letter-spacing:.14em}}
 
 /* 誠準穩正 */
 .values{{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:2.4rem 0}}
 .values div{{background:var(--paper-hi);padding:1rem .6rem;text-align:center}}
-.values b{{font-family:var(--kai);font-size:1.25rem;display:block;color:var(--cinnabar-deep)}}
+.values b{{font-family:var(--kai);font-size:1.25rem;display:block;color:var(--indigo-deep)}}
 .values span{{font-size:.72rem;color:var(--stone)}}
 
 /* Cards */
@@ -53,18 +55,18 @@ body{{background:var(--paper);color:var(--ink);font-family:var(--sans);line-heig
 input,textarea{{width:100%;background:var(--white);border:1px solid var(--line-2);border-radius:2px;
   padding:.7rem .9rem;font-family:var(--sans);font-size:.95rem;color:var(--ink);margin-top:.9rem}}
 textarea{{min-height:110px;resize:vertical}}
-input:focus,textarea:focus{{outline:none;border-color:var(--cinnabar)}}
-button{{margin-top:1.1rem;width:100%;background:var(--cinnabar);color:var(--paper-hi);border:none;
+input:focus,textarea:focus{{outline:none;border-color:var(--indigo)}}
+button{{margin-top:1.1rem;width:100%;background:var(--indigo);color:var(--paper-hi);border:none;
   padding:.85rem;font-size:1rem;font-family:var(--kai);letter-spacing:.3em;cursor:pointer;border-radius:2px}}
-button:hover{{background:var(--cinnabar-deep)}}
+button:hover{{background:var(--indigo-deep)}}
 button:disabled{{background:var(--stone-2);cursor:wait}}
 .hp{{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}}
-.ok{{display:none;border:1px solid var(--cinnabar);color:var(--cinnabar-deep);padding:1rem;margin-top:1rem;
+.ok{{display:none;border:1px solid var(--seal);color:var(--seal-deep);padding:1rem;margin-top:1rem;
   font-family:var(--kai);text-align:center;font-size:1.05rem}}
-.err{{display:none;color:var(--cinnabar-deep);font-size:.85rem;margin-top:.6rem}}
+.err{{display:none;color:var(--seal-deep);font-size:.85rem;margin-top:.6rem}}
 
-.threads a{{color:var(--cinnabar-deep);font-weight:600;text-decoration:none;border-bottom:1px solid var(--cinnabar)}}
-.threads a:hover{{color:var(--cinnabar)}}
+.threads a{{color:var(--indigo-deep);font-weight:600;text-decoration:none;border-bottom:1px solid var(--indigo)}}
+.threads a:hover{{color:var(--indigo)}}
 .tool .tag{{float:right;border:1px solid var(--line-2);color:var(--stone);font-size:.7rem;
   font-family:var(--cond);text-transform:uppercase;letter-spacing:.16em;padding:.2rem .6rem}}
 .tool p{{color:var(--ink-soft);font-size:.92rem}}
