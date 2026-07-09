@@ -54,14 +54,23 @@ button:disabled{background:var(--stone-2);cursor:wait}
   font-family:var(--kai);text-align:center;font-size:1.05rem}
 .err{display:none;color:var(--seal-deep);font-size:.85rem;margin-top:.6rem}
 
-.threads a{color:var(--indigo-deep);font-weight:600;text-decoration:none;border-bottom:1px solid var(--indigo)}
-.threads a:hover{color:var(--indigo)}
 .tool .tag{float:right;border:1px solid var(--line-2);color:var(--stone);font-size:.7rem;
   font-family:var(--cond);text-transform:uppercase;letter-spacing:.16em;padding:.2rem .6rem}
 .tool p{color:var(--ink-soft);font-size:.92rem}
 .tool .note{margin-top:.8rem;font-size:.82rem;color:var(--stone)}
 
-footer{margin:3rem 0 2rem;border-top:1px solid var(--line);padding-top:1.2rem;
+/* 置底聯繫:Threads 主頻道 */
+.contact{margin-top:2.8rem;border-top:1px solid var(--line);padding-top:2.2rem;text-align:center}
+.contact p{margin-top:.7rem;color:var(--ink-soft);font-size:.92rem}
+.threads-btn{display:inline-flex;align-items:center;gap:.65rem;margin-top:1.1rem;
+  border:1px solid var(--line-2);background:var(--paper-hi);padding:.72rem 1.5rem;border-radius:2px;
+  color:var(--ink);text-decoration:none;font-weight:600;font-size:1.02rem;letter-spacing:.04em;
+  transition:border-color .15s,color .15s,box-shadow .15s}
+.threads-btn svg{width:22px;height:22px;fill:currentColor;flex:none}
+.threads-btn:hover{border-color:var(--indigo);color:var(--indigo-deep);box-shadow:0 2px 12px rgba(16,18,20,.08)}
+.contact .hint{margin-top:.8rem;font-size:.78rem;color:var(--stone)}
+
+footer{margin:1.8rem 0 2rem;padding-top:1.2rem;
   font-size:.75rem;color:var(--stone-2);text-align:center;line-height:1.9}
 </style>
 </head>
@@ -97,18 +106,22 @@ footer{margin:3rem 0 2rem;border-top:1px solid var(--line);padding-top:1.2rem;
     <div class="ok" id="ok">✓ 已收到,如同一枚落好的印。我們會盡快回信。</div>
   </div>
 
-  <div class="card threads">
-    <div class="label">Main Channel · 主要聯繫</div>
-    <h2>Threads @taiwan.us.tax</h2>
-    <p style="font-size:.92rem;color:var(--ink-soft)">日常的誠實分享與問答都在這裡:<a href="https://www.threads.net/@taiwan.us.tax" target="_blank" rel="noopener">threads.net/@taiwan.us.tax →</a></p>
-  </div>
-
   <div class="card tool">
     <span class="tag">Beta · 測試中</span>
     <div class="label">Coming Soon · 次要服務</div>
     <h2>專業台美雙邊分析工具</h2>
     <p>AI 檢索台灣 14 部稅法與美國 16 份 IRS 文件,逐條引用、逐步試算「分配 vs 保留」「FEIE vs FTC」等跨境情境,並附完整參考文獻。</p>
     <p class="note">目前為受邀測試(邀請碼制)。想搶先體驗,請在上方表單留下 Email 並註明「試用」。</p>
+  </div>
+
+  <div class="contact">
+    <div class="label">Main Channel · 主要聯繫</div>
+    <p>日常的誠實分享與問答,都在 Threads:</p>
+    <a class="threads-btn" href="https://www.threads.net/@taiwan.us.tax" target="_blank" rel="noopener" aria-label="Threads @taiwan.us.tax">
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg>
+      <span>@taiwan.us.tax</span>
+    </a>
+    <div class="hint">回覆最快的管道 ・ 追蹤看每週台美稅務筆記</div>
   </div>
 
   <footer>
