@@ -1,0 +1,20 @@
+{
+  "name": "taiwanustax-site",
+  "main": "worker.js",
+  "compatibility_date": "2026-09-01",
+  "observability": { "enabled": true },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": true
+  },
+  // 留資交給既有的 taxagent Worker(POST /api/leads → R2 taxlaw-lake 的 leads/)
+  "services": [{ "binding": "TAXAGENT", "service": "taxagent" }]
+  // 正式網域在切換時才加:
+  // "routes": [
+  //   { "pattern": "taiwanustax.com", "custom_domain": true },
+  //   { "pattern": "www.taiwanustax.com", "custom_domain": true }
+  // ]
+}

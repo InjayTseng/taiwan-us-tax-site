@@ -3,10 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>台美報稅 — 台美跨境申報義務健檢</title>
-<meta name="description" content="住在台灣的美國公民、綠卡持有人與雙重身分者：回答幾個問題，看懂自己可能有哪些美國申報義務，每一項都附官方出處。法規資訊分享，非稅務建議。">
+<title>台美報稅 — 住在台灣的美國申報項目健檢</title>
+<meta name="description" content="住在台灣的美國公民、綠卡持有人與雙重身分者：回答幾個問題，看到哪些美國申報項目值得進一步了解，每一項都附官方出處。法規資訊分享，非稅務建議。">
 <meta name="theme-color" content="#F5F6F7">
-<link rel="icon" href="data:image/png;base64,__LOGO__">
+<link rel="canonical" href="https://taiwanustax.com/">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="台美報稅 Taiwan-US Tax">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:url" content="https://taiwanustax.com/">
+<meta property="og:title" content="台美報稅 — 先看懂自己可能要報什麼">
+<meta property="og:description" content="住在台灣的美國公民、綠卡持有人與雙重身分者：七題免費健檢，看到哪些美國申報項目值得進一步了解，每一項附官方出處。法規資訊分享，非稅務建議。">
+<meta property="og:image" content="https://taiwanustax.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">__JSONLD__</script>
 <style>
 :root{
   /* 甲 · 藍墨紅章 Blue Ink · Red Seal */
@@ -45,7 +59,29 @@ section{padding:clamp(3rem,7vw,5.5rem) 0}
 .nav nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--indigo);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
 .nav nav a:hover{color:var(--indigo-deep)}
 .nav nav a:hover::after{transform:scaleX(1)}
-@media(max-width:760px){.nav nav{display:none}.nav .btn{margin-left:auto}}
+.nav nav a[aria-current="true"]{color:var(--indigo-deep)}
+.nav nav a[aria-current="true"]::after{transform:scaleX(1)}
+.menu-btn{display:none;width:42px;height:42px;border:1px solid var(--line-2);background:var(--paper-hi);border-radius:3px;cursor:pointer;align-items:center;justify-content:center;flex:none}
+.menu-btn i,.menu-btn i::before,.menu-btn i::after{display:block;width:18px;height:2px;background:var(--ink);border-radius:1px;transition:transform .25s var(--ease),opacity .2s}
+.menu-btn i{position:relative}
+.menu-btn i::before,.menu-btn i::after{content:"";position:absolute;left:0}
+.menu-btn i::before{top:-6px}.menu-btn i::after{top:6px}
+.menu-btn[aria-expanded="true"] i{background:transparent}
+.menu-btn[aria-expanded="true"] i::before{transform:translateY(6px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] i::after{transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:880px){
+  .nav .btn{margin-left:auto}
+  .menu-btn{display:inline-flex}
+  .nav .wrap{gap:.7rem}
+  .nav nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;margin:0;background:var(--paper-hi);border-bottom:1px solid var(--line);box-shadow:0 14px 30px rgba(16,18,20,.08);padding:.4rem clamp(16px,4vw,40px) .8rem}
+  .nav nav.open{display:flex;animation:rise .25s var(--ease) both}
+  .nav nav a{padding:.85rem 0;font-size:1rem;border-bottom:1px solid var(--line)}
+  .nav nav a:last-child{border-bottom:none}
+  .nav nav a::after{display:none}
+}
+@media(max-width:420px){.brand{font-size:1.35rem}.brand img{width:44px;height:44px}}
+.skip{position:absolute;left:-9999px;top:0;z-index:30;background:var(--indigo);color:#fff;padding:.6rem 1rem;border-radius:0 0 3px 0}
+.skip:focus{left:0}
 
 /* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:1px solid var(--indigo);background:var(--indigo);color:var(--paper-hi);
@@ -140,6 +176,20 @@ section{padding:clamp(3rem,7vw,5.5rem) 0}
 .mbar u{text-decoration:none;font-weight:600;white-space:nowrap}
 @media(max-width:900px){.mbar{display:flex}}
 
+/* Dates */
+.dates{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+@media(max-width:900px){.dates{grid-template-columns:1fr}}
+.date{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--indigo);border-radius:4px;padding:1.3rem}
+.date time{display:block;font-family:var(--head);font-weight:700;font-size:1.5rem;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.date h3{font-size:1rem;margin:.2rem 0 .5rem}
+.date p{font-size:.88rem;color:var(--ink-soft)}
+.date a{font-size:.76rem;display:inline-block;margin-top:.6rem}
+.date br+a{margin-top:.1rem}
+.dnote{margin-top:1.2rem;font-size:.8rem;color:var(--stone);max-width:52em}
+.copy{margin-top:.7rem;width:100%;border:1px solid var(--line-2);background:var(--paper-hi);color:var(--indigo-deep);padding:.6rem;border-radius:3px;font:600 .88rem var(--sans);cursor:pointer;transition:border-color .15s,background .15s}
+.copy:hover{border-color:var(--indigo)}
+.copy.done{border-color:var(--seal);color:var(--seal-deep)}
+
 /* Pricing */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.2rem;align-items:stretch}
 @media(max-width:900px){.plans{grid-template-columns:1fr}}
@@ -187,7 +237,17 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--indigo);
 .threads-btn svg{width:20px;height:20px;fill:currentColor;flex:none}
 .threads-btn:hover{border-color:var(--indigo);color:var(--indigo-deep);box-shadow:0 2px 12px rgba(16,18,20,.08);transform:translateY(-1px)}
 
-footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;font-size:.76rem;color:var(--stone);text-align:center;line-height:1.9}
+footer{border-top:1px solid var(--line);padding:2.6rem 0 2.2rem;font-size:.84rem;color:var(--stone);line-height:1.8}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2rem}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr;gap:1.4rem}}
+.fgrid .brand{font-size:1.3rem}.fgrid .brand img{width:40px;height:40px}
+.fgrid p{margin-top:.7rem;max-width:30em}
+.fgrid h4{font:600 .78rem var(--sans);color:var(--ink);letter-spacing:.08em;margin-bottom:.5rem}
+.fgrid ul{list-style:none;padding:0}
+.fgrid li a{color:var(--stone);text-decoration:none}
+.fgrid li a:hover{color:var(--indigo-deep);text-decoration:underline}
+.fbot{margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:.76rem;color:var(--stone-2);display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;justify-content:space-between}
+@media print{.nav,.mbar,.hero .cta,#join,.copy,.after,.menu-btn{display:none!important}.rv{opacity:1!important;transform:none!important}section{padding:1.2rem 0}body{background:#fff}}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
@@ -195,19 +255,23 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;font-size:.76rem;c
   .rv{opacity:1;transform:none}
 }
 </style>
+<noscript><style>.rv{opacity:1;transform:none}.report li,.stamp{opacity:1;animation:none}</style></noscript>
 </head>
 <body>
 
+<a class="skip" href="#top">跳到主要內容</a>
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#top"><img src="data:image/png;base64,__LOGO__" alt="" width="50" height="50">台美報稅</a>
-    <nav aria-label="主要導覽">
+    <nav id="menu" aria-label="主要導覽">
       <a href="#solution">解決方案</a>
       <a href="#checkup">免費健檢</a>
+      <a href="#dates">重要期限</a>
       <a href="#pricing">方案與價格</a>
       <a href="#faq">常見問題</a>
     </nav>
     <a class="btn sm" href="#checkup">開始健檢</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="開啟選單" aria-controls="menu" aria-expanded="false"><i></i></button>
   </div>
 </header>
 
@@ -269,19 +333,33 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;font-size:.76rem;c
         <h2 class="rv">一分鐘初步健檢</h2>
     <p class="lede rv">每答一題，結果就會跟著更新。結果只是「值得進一步了解的項目」，不是你一定要報或不用報的結論。</p>
     <div class="check rv">
-      <div class="qs" id="qs"></div>
+      <div class="qs" id="qs"><noscript><p style="padding:1.2rem 0">互動健檢需要開啟瀏覽器的 JavaScript。你也可以直接到 Threads 私訊我們，或在下方留下 Email。</p></noscript></div>
       <aside class="res" id="res" aria-live="polite">
         <div class="res-h"><b>你的結果</b><span id="cnt">0 / 7 題</span></div>
         <div class="bar"><i id="bar"></i></div>
         <ul id="out"><li class="empty" style="border:none;animation:none">先回答第一題：你的美國身分。</li></ul>
+        <button class="copy" id="copy" type="button" hidden>複製結果與出處連結</button>
         <div class="after" id="after">
           <a class="btn" style="width:100%" href="#join" data-plan="完整健檢報告 US$99">想要完整報告</a>
         </div>
-        <p class="disc">依 2025 年度（2026 年申報）的 IRS 與 FinCEN 公開說明整理；門檻會因申報身分與居住地而不同。這七題沒有涵蓋所有申報義務。法規資訊分享，非稅務建議，請以官方文件與持照專業人士的判斷為準。</p>
+        <p class="disc">依 2025 年度（2026 年申報）的 IRS 公開說明整理；門檻會因申報身分與居住地而不同。這七題沒有涵蓋所有申報義務。法規資訊分享，非稅務建議，請以官方文件與持照專業人士的判斷為準。</p>
       </aside>
     </div>
   </div>
   <a class="mbar" id="mbar" href="#res" aria-hidden="true" tabindex="-1"><span id="mtxt"></span><u>看結果</u></a>
+</section>
+
+<section id="dates">
+  <div class="wrap">
+    <h2 class="rv">下一個報稅季的重要期限</h2>
+    <p class="lede rv">2027 年要申報的是 2026 年度。住在台灣的人最常搞混的是：申報期限可以延，利息不會延。</p>
+    <div class="dates">
+      <div class="date rv"><time datetime="2027-04-15">2027 年 4 月 15 日</time><h3>一般申報與繳稅期限</h3><p>Form 1040 的一般到期日。之後不論申報期限怎麼延，欠稅的利息都從這一天起算。FBAR 的期限也是這一天，但會自動延到 10 月 15 日，不必另外申請。</p><a href="https://www.irs.gov/individuals/international-taxpayers/us-citizens-and-resident-aliens-abroad-extensions-of-time-to-file" target="_blank" rel="noopener">出處：IRS 海外居民申報延期說明 ↗</a><br><a href="https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar" target="_blank" rel="noopener">出處：IRS FBAR 說明 ↗</a></div>
+      <div class="date rv"><time datetime="2027-06-15">2027 年 6 月 15 日</time><h3>住在境外者的自動延期</h3><p>一般到期日當天住在美國與波多黎各以外，且主要工作地點也在境外的美國公民與稅務居民，申報與繳稅期限自動延長兩個月，利息仍從 4 月 15 日起算。不用申請，但申報時要附說明，寫明符合哪一種情況。</p><a href="https://www.irs.gov/individuals/international-taxpayers/us-citizens-and-resident-aliens-abroad-automatic-2-month-extension-of-time-to-file" target="_blank" rel="noopener">出處：IRS 自動延期兩個月 ↗</a></div>
+      <div class="date rv"><time datetime="2027-10-15">2027 年 10 月 15 日</time><h3>申請延期後的期限</h3><p>在你適用的申報期限當天或之前送出 Form 4868（一般為 4 月 15 日，符合境外自動延期者為 6 月 15 日），申報期限可延到這一天。這只延申報，不延繳稅。</p><a href="https://www.irs.gov/forms-pubs/about-form-4868" target="_blank" rel="noopener">出處：IRS Form 4868 ↗</a></div>
+    </div>
+    <p class="dnote rv">依現行規定整理的 2026 年度一般情況，IRS 每年公告時可能調整；不含各州規定、災區延期或個別情況。逾期未繳除了利息，另可能有遲繳與遲報罰款。人在境外者可在 10 月 15 日前去信 IRS 申請再延到 12 月 15 日，由 IRS 裁量。2025 年度的對應期限（2026 年 4 月、6 月、10 月的 15 日）都已經過了。法規資訊分享，非稅務建議。</p>
+  </div>
 </section>
 
 <section id="pricing" class="alt">
@@ -386,8 +464,33 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;font-size:.76rem;c
 
 <footer>
   <div class="wrap">
-    台美報稅 Taiwan-US Tax ・ 服務籌備中，尚未持照，正與持照會計師洽談合作。<br>
-    本站內容與工具皆為法規資訊分享，非專業稅務建議。 Research aid, not professional tax advice.
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="#top"><img src="data:image/png;base64,__LOGO__" alt="" width="40" height="40">台美報稅</a>
+        <p>給住在台灣的美國公民、綠卡持有人與雙重身分者的法規資訊與工具。服務籌備中。我們不是持照機構，不代客申報；正與持照專業人士（CPA 或 EA）洽談合作，尚未談定。</p>
+      </div>
+      <div>
+        <h4>網站</h4>
+        <ul>
+          <li><a href="#solution">解決方案</a></li>
+          <li><a href="#checkup">免費健檢</a></li>
+          <li><a href="#dates">重要期限</a></li>
+          <li><a href="#pricing">方案與價格</a></li>
+          <li><a href="#faq">常見問題</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>聯絡</h4>
+        <ul>
+          <li><a href="__THREADS__" target="_blank" rel="noopener">Threads @taiwan.us.tax</a></li>
+          <li><a href="#join">加入候補</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>本站內容與工具皆為法規資訊分享，非專業稅務建議。Research aid, not professional tax advice.</span>
+      <span>© 2026 台美報稅 Taiwan-US Tax ・ 最後更新 2026 年 11 月 11 日</span>
+    </div>
   </div>
 </footer>
 
@@ -400,6 +503,28 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;font-size:.76rem;c
   const nav = $('#nav');
   const onScroll = () => nav.classList.toggle('stuck', scrollY > 8);
   addEventListener('scroll', onScroll, {passive: true}); onScroll();
+
+  // Mobile menu
+  const menu = $('#menu'), menuBtn = $('#menuBtn');
+  const setMenu = (open) => {
+    menu.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? '關閉選單' : '開啟選單');
+  };
+  menuBtn.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+  addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+
+  // Highlight the nav link of the section in view
+  if ('IntersectionObserver' in window) {
+    const links = $$('a', menu), seen = new Map();
+    const spy = new IntersectionObserver((es) => {
+      es.forEach((e) => seen.set(e.target.id, e.isIntersecting));
+      const cur = links.map((a) => a.hash.slice(1)).find((id) => seen.get(id));
+      links.forEach((a) => a.hash.slice(1) === cur ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current'));
+    }, {rootMargin: '-45% 0px -50% 0px'});
+    links.forEach((a) => { const t = $(a.hash); if (t) spy.observe(t); });
+  }
 
   // Scroll reveal, staggered within a group
   const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => {
@@ -467,6 +592,23 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;font-size:.76rem;c
     bio.observe(qs); bio.observe($('#res'));
   }
 
+  const copyBtn = $('#copy');
+  copyBtn.addEventListener('click', async () => {
+    const text = ['台美報稅・初步健檢結果（法規資訊分享，非稅務建議）', '']
+      .concat(results().map((it) => '・' + it.title + '\n  ' + it.body + '\n  ' + SRC[it.src][1]))
+      .concat(['', 'https://taiwanustax.com/']).join('\n');
+    let ok = false;
+    try { await navigator.clipboard.writeText(text); ok = true; } catch (_) {
+      const ta = document.createElement('textarea'); ta.value = text; ta.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(ta); ta.select();
+      try { ok = document.execCommand('copy'); } catch (e2) {}
+      ta.remove();
+    }
+    copyBtn.textContent = ok ? '已複製' : '複製失敗，請手動選取';
+    copyBtn.classList.toggle('done', ok);
+    setTimeout(() => { copyBtn.textContent = '複製結果與出處連結'; copyBtn.classList.remove('done'); }, 2200);
+  });
+
   const item = (title, body, src, warn) => ({title, body, src, warn});
   function results() {
     const r = [], hit = (k) => ans[k] === 'y' || ans[k] === 'u';
@@ -481,7 +623,7 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;font-size:.76rem;c
     if (hit('pfic')) r.push(item('Form 8621（PFIC）', '非美國發行的 ETF 與共同基金常被歸類為 PFIC，有專屬的申報表與計稅方式。是否每年都要申報另有金額與交易條件。', 'f8621'));
     if (hit('corp')) r.push(item('Form 5471（外國公司）', '持有特定比例外國公司股份，或擔任其董事、經理人的美國人，可能需要申報公司資訊。持股計算包含間接與歸屬持有，適用類別的判定相當細。', 'f5471'));
     if (hit('gift')) r.push(item('Form 3520（外國贈與）', '從非美國人收到超過 10 萬美元的贈與或遺產時的資訊申報。屬於申報義務，不等於要繳稅。', 'f3520'));
-    if (hit('missed')) r.push(item('過去年度的補報程序', 'IRS 設有 Streamlined 等正式程序處理非蓄意的漏報。是否符合資格需個案判斷，適用哪一種差別很大，這一項建議優先找持照專業人士確認。', 'sfcp', true));
+    if (hit('missed')) r.push(item('過去年度的補報程序', 'IRS 設有 Streamlined 等正式程序處理非蓄意的漏報。是否符合資格需個案判斷，適用哪一種差別很大，這一項宜先找持照專業人士確認。', 'sfcp', true));
     const left = Q.length - Object.keys(ans).length;
     r.push(item(left ? '還有 ' + left + ' 題未作答' : '這份清單不是全部', '這七題沒有涵蓋所有申報義務，例如外國信託、合夥、自雇所得。沒有出現在清單上，不代表不需要申報。', 'pub54', true));
     return r;
@@ -509,6 +651,7 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;font-size:.76rem;c
     syncBar();
     const done = ans.status && ans.status !== 'none' && n === Q.length;
     after.style.display = done ? 'block' : 'none';
+    copyBtn.hidden = !r.length;
     $('#attachRow').style.display = n ? 'flex' : 'none';
   }
 
