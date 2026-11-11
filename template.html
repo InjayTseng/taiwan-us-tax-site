@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>台美報稅 — 台美跨境申報義務健檢</title>
+<meta name="description" content="住在台灣的美國公民、綠卡持有人與雙重身分者：回答幾個問題，看懂自己可能有哪些美國申報義務，每一項都附官方出處。法規資訊分享，非稅務建議。">
+<meta name="theme-color" content="#F5F6F7">
+<link rel="icon" href="data:image/png;base64,__LOGO__">
+<style>
+:root{
+  /* 甲 · 藍墨紅章 Blue Ink · Red Seal */
+  --paper:#F5F6F7; --paper-hi:#FBFCFD; --white:#FFF;
+  --ink:#101214; --ink-soft:#33383D; --stone:#5F6A72; --stone-2:#8B959C;
+  --line:#D4DADD; --line-2:#BAC3C8;
+  --indigo:#1F4E79; --indigo-deep:#153A5B; --indigo-wash:#E8EEF4;
+  --seal:#9E3B31; --seal-deep:#7C2D24; --seal-wash:#F6ECEA;
+  --head:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+  --sans:"PingFang TC","Noto Sans TC",-apple-system,"Segoe UI",sans-serif;
+  --cond:"Arial Narrow","Helvetica Neue Condensed","Roboto Condensed",sans-serif;
+  --shadow:0 1px 2px rgba(16,18,20,.05),0 10px 30px rgba(16,18,20,.07);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:var(--indigo)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.label{font-family:var(--cond);text-transform:uppercase;letter-spacing:.18em;font-size:.7rem;color:var(--stone)}
+h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.01em;line-height:1.3;text-wrap:balance}
+h2{font-size:clamp(1.55rem,3.2vw,2.1rem);margin-top:.5rem;letter-spacing:-.02em}
+section{padding:clamp(3rem,7vw,5.5rem) 0}
+.lede{color:var(--ink-soft);max-width:40em;margin-top:.9rem}
+:focus-visible{outline:2px solid var(--indigo);outline-offset:3px}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(245,246,247,.86);backdrop-filter:saturate(1.4) blur(10px);
+  -webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .25s,box-shadow .25s}
+.nav.stuck{border-color:var(--line);box-shadow:0 6px 20px rgba(16,18,20,.05)}
+.nav .wrap{display:flex;align-items:center;gap:1.5rem;height:76px}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);font-family:"BiauKai","DFKai-SB","Kaiti TC","STKaiti",serif;font-weight:700;font-size:1.6rem;letter-spacing:.12em;white-space:nowrap}
+.brand img{width:50px;height:50px}
+.nav nav{margin-left:auto;display:flex;gap:1.4rem}
+.nav nav a{color:var(--ink-soft);text-decoration:none;font-size:.9rem;position:relative;padding:.3rem 0}
+.nav nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--indigo);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
+.nav nav a:hover{color:var(--indigo-deep)}
+.nav nav a:hover::after{transform:scaleX(1)}
+@media(max-width:760px){.nav nav{display:none}.nav .btn{margin-left:auto}}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:1px solid var(--indigo);background:var(--indigo);color:var(--paper-hi);
+  padding:.72rem 1.4rem;border-radius:3px;font:600 .95rem var(--sans);letter-spacing:.06em;text-decoration:none;cursor:pointer;
+  transition:transform .18s var(--ease),background .18s,box-shadow .18s,border-color .18s,color .18s}
+.btn:hover{background:var(--indigo-deep);border-color:var(--indigo-deep);transform:translateY(-1px);box-shadow:0 8px 20px rgba(21,58,91,.22)}
+.btn:active{transform:translateY(0);box-shadow:none}
+.btn.ghost{background:transparent;color:var(--indigo-deep);border-color:var(--line-2)}
+.btn.ghost:hover{background:var(--paper-hi);border-color:var(--indigo);box-shadow:none}
+.btn.sm{padding:.5rem 1rem;font-size:.85rem}
+.btn .arr{transition:transform .2s var(--ease)}
+.btn:hover .arr{transform:translateX(3px)}
+.btn:disabled{background:var(--stone-2);border-color:var(--stone-2);cursor:wait;transform:none;box-shadow:none}
+
+/* Hero */
+.hero{padding-top:clamp(2.5rem,6vw,4.5rem)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.hero h1{font-size:clamp(1.9rem,4.2vw,2.75rem);margin-top:1rem;text-wrap:wrap;letter-spacing:-.02em;line-height:1.22}
+.hero h1 span{display:inline-block}
+.hero h1 em{font-style:normal;color:var(--indigo-deep);background:linear-gradient(transparent 68%,var(--indigo-wash) 68%)}
+.badge{display:inline-block;border:1px solid var(--seal);color:var(--seal-deep);font-size:.76rem;padding:.2rem .85rem;letter-spacing:.14em}
+.hero .cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.hero .fine{margin-top:1rem;font-size:.8rem;color:var(--stone)}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+
+/* Report preview card */
+.report{position:relative;background:var(--white);border:1px solid var(--line);box-shadow:var(--shadow);padding:1.5rem 1.5rem 1.2rem;border-radius:4px}
+.report::before{content:"";position:absolute;inset:8px -8px -8px 8px;border:1px solid var(--line);background:var(--paper-hi);z-index:-1;border-radius:4px}
+.report h3{font-size:1.05rem;margin:.3rem 0 1rem}
+.report ul{list-style:none;padding:0;display:grid;gap:.55rem}
+.report li{display:grid;grid-template-columns:auto 1fr auto;gap:.7rem;align-items:center;padding:.6rem .7rem;border:1px solid var(--line);border-radius:3px;background:var(--paper-hi);font-size:.9rem;
+  opacity:0;transform:translateY(8px);animation:rise .5s var(--ease) forwards}
+.report li:nth-child(1){animation-delay:.25s}.report li:nth-child(2){animation-delay:.45s}.report li:nth-child(3){animation-delay:.65s}.report li:nth-child(4){animation-delay:.85s}
+.report code{font:600 .78rem var(--cond);letter-spacing:.08em;color:var(--indigo-deep);background:var(--indigo-wash);padding:.15rem .45rem;border-radius:2px;white-space:nowrap}
+.report .src{font-size:.7rem;color:var(--stone);white-space:nowrap}
+.report .foot{margin-top:.9rem;font-size:.72rem;color:var(--stone-2)}
+.stamp{position:absolute;right:-10px;top:-18px;width:74px;height:74px;border:3px solid var(--seal);color:var(--seal);border-radius:6px;
+  display:grid;place-items:center;font:800 1.2rem/1.15 var(--head);letter-spacing:.06em;text-align:center;background:rgba(251,252,253,.9);
+  transform:rotate(8deg) scale(2.2);opacity:0;animation:stamp .45s cubic-bezier(.3,1.5,.5,1) 1.25s forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes stamp{60%{opacity:1}to{opacity:.92;transform:rotate(8deg) scale(1)}}
+
+/* Trust strip */
+.strip{padding:0}
+.strip .wrap>div{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.strip .cell{background:var(--paper-hi);padding:1.1rem .8rem;text-align:center}
+.strip b{font-family:var(--head);font-weight:700;letter-spacing:-.01em;font-size:1.5rem;display:block;color:var(--indigo-deep);font-variant-numeric:tabular-nums}
+.strip span{font-size:.76rem;color:var(--stone)}
+@media(max-width:640px){.strip .wrap>div{grid-template-columns:repeat(2,1fr)}}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* Situations + steps */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+@media(max-width:900px){.grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}}
+@media(max-width:520px){.grid4{grid-template-columns:1fr}}
+.tile{background:var(--paper-hi);border:1px solid var(--line);border-radius:4px;padding:1.3rem;transition:transform .25s var(--ease),box-shadow .25s,border-color .25s}
+.tile:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--line-2)}
+.tile h3{font-size:1.08rem;margin-bottom:.5rem}
+.tile p{font-size:.88rem;color:var(--ink-soft)}
+.tile .q{font-size:.82rem;color:var(--stone);border-left:2px solid var(--seal);padding-left:.7rem;margin-top:.8rem}
+.step .n{font:700 .8rem var(--cond);letter-spacing:.2em;color:var(--seal-deep)}
+.step h3{margin-top:.3rem}
+.pill{display:inline-block;font-size:.7rem;border:1px solid var(--line-2);color:var(--stone);padding:.05rem .55rem;border-radius:99px;margin-left:.4rem;vertical-align:middle;font-family:var(--sans);font-weight:400;letter-spacing:.04em}
+.alt{background:var(--paper-hi);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* Checkup */
+.check{display:grid;grid-template-columns:1.15fr .85fr;gap:1.5rem;margin-top:2rem;align-items:start}
+@media(max-width:900px){.check{grid-template-columns:1fr}}
+.qs{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:.4rem 1.4rem}
+.qrow{padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.qrow:last-child{border-bottom:none}
+.qrow p{font-size:.95rem;font-weight:600}
+.qrow small{display:block;color:var(--stone);font-size:.78rem;margin-top:.15rem;font-weight:400}
+.seg{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.7rem}
+.seg button{border:1px solid var(--line-2);background:var(--paper-hi);color:var(--ink-soft);padding:.42rem .95rem;border-radius:99px;font:inherit;font-size:.86rem;cursor:pointer;
+  transition:background .15s,border-color .15s,color .15s,transform .15s var(--ease)}
+.seg button:hover{border-color:var(--indigo);color:var(--indigo-deep)}
+.seg button:active{transform:scale(.96)}
+.seg button[aria-pressed="true"]{background:var(--indigo);border-color:var(--indigo);color:var(--paper-hi)}
+.res{position:sticky;top:96px;background:var(--white);border:1px solid var(--line);border-radius:4px;padding:1.4rem;box-shadow:var(--shadow)}
+.bar{height:4px;background:var(--line);border-radius:2px;overflow:hidden;margin:.7rem 0 1rem}
+.bar i{display:block;height:100%;width:0;background:var(--indigo);transition:width .4s var(--ease)}
+.res ul{list-style:none;padding:0;display:grid;gap:.6rem}
+.res li{border:1px solid var(--line);border-left:3px solid var(--indigo);border-radius:3px;padding:.7rem .8rem;font-size:.86rem;animation:rise .4s var(--ease) both}
+.res li.warn{border-left-color:var(--seal);background:var(--seal-wash)}
+.res li b{display:block;font-size:.92rem}
+.res li a{font-size:.74rem}
+.res .empty{color:var(--stone);font-size:.88rem;padding:.4rem 0}
+.res .after{margin-top:1.1rem;display:none}
+.res .disc{margin-top:.9rem;font-size:.72rem;color:var(--stone-2);line-height:1.6}
+
+/* Pricing */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.2rem;align-items:stretch}
+@media(max-width:900px){.plans{grid-template-columns:1fr}}
+.plan{position:relative;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:5px;padding:1.7rem 1.5rem 1.5rem;
+  transition:transform .25s var(--ease),box-shadow .25s,border-color .25s}
+.plan:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--line-2)}
+.plan.hot{border:2px solid var(--indigo);padding:calc(1.7rem - 1px) calc(1.5rem - 1px) calc(1.5rem - 1px)}
+.plan .flag{position:absolute;top:-.8rem;left:1.4rem;background:var(--seal);color:#fff;font-size:.72rem;letter-spacing:.14em;padding:.15rem .7rem;border-radius:2px}
+.plan h3{font-size:1.2rem}
+.plan .for{font-size:.84rem;color:var(--stone);margin-top:.2rem;min-height:2.9em}
+.price{margin:1.1rem 0 .2rem;font-family:var(--head);font-size:2.5rem;font-weight:700;letter-spacing:-.03em;color:var(--ink);line-height:1.1}
+.price small{font:400 .85rem var(--sans);color:var(--stone);margin-left:.3rem}
+.price.txt{font-size:1.45rem;padding:.6rem 0;letter-spacing:-.01em}
+.plan .status{font-size:.76rem;color:var(--seal-deep)}
+.plan ul{list-style:none;padding:0;margin:1.2rem 0 1.5rem;display:grid;gap:.55rem;font-size:.9rem;color:var(--ink-soft)}
+.plan li{display:grid;grid-template-columns:1.1rem 1fr;gap:.5rem}
+.plan li::before{content:"✓";color:var(--indigo);font-weight:700}
+.plan li.no{color:var(--stone-2)}.plan li.no::before{content:"–";color:var(--stone-2)}
+.plan .btn{margin-top:auto;width:100%}
+.pnote{margin-top:1.4rem;font-size:.82rem;color:var(--stone);text-align:center}
+
+/* FAQ */
+.faq{max-width:760px;margin:2rem auto 0}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:1.1rem 2rem 1.1rem 0;font-weight:600;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:.2rem;top:50%;translate:0 -50%;font-size:1.3rem;color:var(--indigo);transition:rotate .25s var(--ease)}
+details[open] summary::after{rotate:45deg}
+details p{padding:0 0 1.2rem;color:var(--ink-soft);font-size:.93rem;animation:rise .35s var(--ease) both}
+
+/* Form */
+.join{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
+@media(max-width:860px){.join{grid-template-columns:1fr}}
+.card{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:1.7rem;box-shadow:var(--shadow)}
+label{display:block;font-size:.8rem;color:var(--stone);margin-top:1rem}
+input[type=email],textarea,select{width:100%;background:var(--paper-hi);border:1px solid var(--line-2);border-radius:3px;padding:.7rem .9rem;font:inherit;font-size:.95rem;color:var(--ink);margin-top:.35rem;transition:border-color .15s,box-shadow .15s}
+textarea{min-height:110px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--indigo);box-shadow:0 0 0 3px var(--indigo-wash)}
+.chk{display:none;gap:.5rem;align-items:flex-start;font-size:.82rem;color:var(--ink-soft);margin-top:.9rem}
+.chk input{margin-top:.3rem}
+.card .btn{width:100%;margin-top:1.2rem;font-size:1rem;letter-spacing:.2em}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+.ok{display:none;border:1px solid var(--seal);color:var(--seal-deep);padding:1.1rem;font-family:var(--head);font-weight:600;text-align:center;font-size:1rem;animation:rise .4s var(--ease) both}
+.err{display:none;color:var(--seal-deep);font-size:.85rem;margin-top:.6rem}
+.threads-btn{display:inline-flex;align-items:center;gap:.65rem;margin-top:1.2rem;border:1px solid var(--line-2);background:var(--paper-hi);padding:.7rem 1.4rem;border-radius:3px;
+  color:var(--ink);text-decoration:none;font-weight:600;transition:border-color .15s,color .15s,box-shadow .15s,transform .18s var(--ease)}
+.threads-btn svg{width:20px;height:20px;fill:currentColor;flex:none}
+.threads-btn:hover{border-color:var(--indigo);color:var(--indigo-deep);box-shadow:0 2px 12px rgba(16,18,20,.08);transform:translateY(-1px)}
+
+footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;font-size:.76rem;color:var(--stone);text-align:center;line-height:1.9}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="data:image/png;base64,__LOGO__" alt="" width="50" height="50">台美報稅</a>
+    <nav aria-label="主要導覽">
+      <a href="#solution">解決方案</a>
+      <a href="#checkup">免費健檢</a>
+      <a href="#pricing">方案與價格</a>
+      <a href="#faq">常見問題</a>
+    </nav>
+    <a class="btn sm" href="#checkup">開始健檢</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="badge">誠實分享 ・ 服務籌備中</span>
+      <h1><span>住在台灣的</span><span>美國稅務居民，</span><br><em><span>先看懂自己</span><span>可能要報什麼</span></em></h1>
+      <p class="lede">美國公民、綠卡持有人、雙重身分者：回答幾個問題，看到哪些美國申報項目值得進一步了解，每一項都附官方說明連結。先看懂，再去找持照專業人士談。</p>
+      <div class="cta">
+        <a class="btn" href="#checkup">開始免費健檢 <span class="arr">→</span></a>
+        <a class="btn ghost" href="#pricing">看方案與價格</a>
+      </div>
+      <p class="fine">不用註冊。健檢在你的瀏覽器裡計算；除非你在候補表單勾選一併附上，答案不會送出。</p>
+    </div>
+    <div class="report" aria-hidden="true">
+      <div class="stamp">有<br>據</div>
+      <div class="label">Sample · 健檢結果示意</div>
+      <h3>可能需要了解的申報</h3>
+      <ul>
+        <li><code>FBAR</code><span>海外帳戶合計超過 1 萬美元</span><span class="src">FinCEN 114</span></li>
+        <li><code>8938</code><span>海外金融資產揭露</span><span class="src">FATCA</span></li>
+        <li><code>8621</code><span>台灣 ETF 與基金</span><span class="src">PFIC</span></li>
+        <li><code>5471</code><span>持有台灣公司 10% 以上</span><span class="src">CFC</span></li>
+      </ul>
+      <p class="foot">示意畫面。實際結果依你的回答而定。</p>
+    </div>
+  </div>
+</section>
+
+<section class="strip">
+  <div class="wrap"><p class="label" style="margin-bottom:.7rem">分析工具（受邀測試中）的資料庫</p><div>
+    <div class="cell"><b data-count="14">14</b><span>部台灣稅法已入庫</span></div>
+    <div class="cell"><b data-count="16">16</b><span>份 IRS 文件已入庫</span></div>
+    <div class="cell"><b>逐條</b><span>工具的回答附法規出處</span></div>
+    <div class="cell"><b>每週</b><span>自動比對法規更新</span></div>
+  </div></div>
+</section>
+
+<section id="problem">
+  <div class="wrap">
+    <div class="label rv">Who it's for · 適合誰</div>
+    <h2 class="rv">這四種情況，最常有人來問</h2>
+    <p class="lede rv">整理自 Threads 上常見的提問類型，以下問句是歸納後的寫法。共同點是：在台灣、用中文、需要同時懂兩邊規定。</p>
+    <div class="grid4">
+      <div class="tile rv"><h3>過去幾年沒報</h3><p>不知道要報，後來才發現。想知道補報有哪些正式程序、差別在哪裡。</p><p class="q">我是美國籍，從來沒報過，現在怎麼辦？</p></div>
+      <div class="tile rv"><h3>身分正要改變</h3><p>快拿到綠卡、準備歸化，或剛搬回台灣。想在日期之前把該處理的事排好。</p><p class="q">入境前我的台灣資產要先處理嗎？</p></div>
+      <div class="tile rv"><h3>持有台灣 ETF 或基金</h3><p>一般台股個股與台灣 ETF、基金在美國稅法上的待遇不同，後者常牽涉 PFIC 規定。</p><p class="q">賣掉是不是就沒事了？</p></div>
+      <div class="tile rv"><h3>搞不清楚 FBAR</h3><p>門檻看的是所有海外帳戶加總，不是單一帳戶。這是最常見的誤解。</p><p class="q">每個帳戶都沒超過一萬，也要報嗎？</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="solution" class="alt">
+  <div class="wrap">
+    <div class="label rv">Solution · 解決方案</div>
+    <h2 class="rv">三步，從「不知道該問什麼」到「知道要查哪幾項」</h2>
+    <div class="grid3">
+      <div class="tile step rv"><div class="n">STEP 01</div><h3>回答幾個問題<span class="pill">現在可用</span></h3><p>身分、帳戶、投資、公司持股。免費健檢在這一頁就能做完，大約一分鐘。</p></div>
+      <div class="tile step rv"><div class="n">STEP 02</div><h3>拿到附出處的清單<span class="pill">候補中</span></h3><p>完整健檢報告依你填的資料，整理公開法規中可能相關的表單與官方期限，每一項標明出處，方便你帶去和持照專業人士討論。</p></div>
+      <div class="tile step rv"><div class="n">STEP 03</div><h3>需要申報時，交給持照專業<span class="pill">洽談中</span></h3><p>我們不是會計師，不代你申報，也不提供申報建議。目前正與持照專業人士（CPA 或 EA）洽談合作，尚未談定；在那之前，申報協助只開放候補登記。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="checkup">
+  <div class="wrap">
+    <div class="label rv">Free checkup · 免費健檢</div>
+    <h2 class="rv">一分鐘初步健檢</h2>
+    <p class="lede rv">每答一題，右邊就會更新。結果只是「值得進一步了解的項目」，不是你一定要報或不用報的結論。</p>
+    <div class="check rv">
+      <div class="qs" id="qs"></div>
+      <aside class="res" aria-live="polite">
+        <div class="label">Result · 你的結果</div>
+        <div class="bar"><i id="bar"></i></div>
+        <ul id="out"><li class="empty" style="border:none;animation:none">先回答左邊第一題。</li></ul>
+        <div class="after" id="after">
+          <a class="btn" style="width:100%" href="#join" data-plan="完整健檢報告 US$99">想要完整報告 <span class="arr">→</span></a>
+        </div>
+        <p class="disc">依 2025 年度（2026 年申報）的 IRS 與 FinCEN 公開說明整理；門檻會因申報身分與居住地而不同。這七題沒有涵蓋所有申報義務。法規資訊分享，非稅務建議，請以官方文件與持照專業人士的判斷為準。</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="alt">
+  <div class="wrap">
+    <div class="label rv">Pricing · 方案與價格</div>
+    <h2 class="rv">價格與現況，先講清楚</h2>
+    <p class="lede rv">免費健檢現在就能用。完整報告有預計價格，尚未開賣。申報協助要等合作談定才會報價，現在不標。</p>
+    <div class="plans">
+      <div class="plan rv">
+        <h3>初步健檢</h3>
+        <p class="for">想先知道自己大概落在哪些申報項目。</p>
+        <div class="price">US$0</div>
+        <div class="status">現在可用</div>
+        <ul>
+          <li>七題互動式健檢</li>
+          <li>可能相關的表單清單</li>
+          <li>每項附 IRS 官方連結</li>
+          <li class="no">不含個人化訪談與缺件清單</li>
+        </ul>
+        <a class="btn ghost" href="#checkup">開始健檢</a>
+      </div>
+      <div class="plan hot rv">
+        <span class="flag">主要方案</span>
+        <h3>完整健檢報告</h3>
+        <p class="for">要一份能帶去給持照專業人士、把自己情況講清楚的文件。</p>
+        <div class="price">US$99<small>預計 ・ 一次性</small></div>
+        <div class="status">尚未開放 ・ 登記候補免費</div>
+        <ul>
+          <li>比免費健檢更完整的問答</li>
+          <li>依你填的資料，整理可能相關的表單與官方期限</li>
+          <li>每一項附法規出處，方便與持照專業人士討論</li>
+          <li>與會計師談之前可先備妥的資料清單</li>
+          <li class="no">不含申報代辦，不提供申報建議</li>
+        </ul>
+        <a class="btn" href="#join" data-plan="完整健檢報告 US$99">加入候補 <span class="arr">→</span></a>
+      </div>
+      <div class="plan rv">
+        <h3>申報協助</h3>
+        <p class="for">已經確定要申報或補報，需要持照專業人士承接。</p>
+        <div class="price txt">合作洽談中</div>
+        <div class="status">尚未報價 ・ 只收候補</div>
+        <ul>
+          <li>規劃中：由持照專業人士（CPA 或 EA）承接</li>
+          <li>合作談定後才會公布服務範圍與報價</li>
+          <li>談定後依候補順序通知</li>
+          <li class="no">目前無法保證是否開辦與開始時間</li>
+        </ul>
+        <a class="btn ghost" href="#join" data-plan="申報協助候補">登記候補</a>
+      </div>
+    </div>
+    <p class="pnote">金流尚未開放，登記候補免費。實際價格與內容以開放時公告的條款為準。</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="label rv" style="text-align:center">FAQ · 常見問題</div>
+    <h2 class="rv" style="text-align:center">先把話說在前面</h2>
+    <div class="faq rv">
+      <details><summary>你們是會計師嗎？</summary><p>不是。台美報稅目前尚未持照，也不代客申報。我們做的是把公開法規整理成看得懂的資訊與工具。需要申報時，應由持照專業人士（CPA 或 EA）處理；我們正在洽談這樣的合作，尚未談定。</p></details>
+      <details><summary>健檢結果可以當成稅務建議嗎？</summary><p>不可以。健檢與報告都是法規資訊的整理，列出「值得進一步了解」的項目與出處，不會告訴你最終該怎麼報。實際義務會因你的申報身分、居住地與完整財務狀況而不同。</p></details>
+      <details><summary>完整健檢報告什麼時候可以買？</summary><p>還沒開放付款。登記候補免費，開放時會依登記順序寄信通知。預計價格為一次性 US$99，實際價格與內容以開放時公告的條款為準。</p></details>
+      <details><summary>我在這個網站填的資料會到哪裡？</summary><p>這一頁的免費健檢在你的瀏覽器裡計算。只有你按下候補表單的「送出」時，Email、選擇的方案、你寫的內容，以及你勾選附上的健檢回答才會傳給我們。隱私權政策與資料保存期限還在訂定中；在那之前請不要填寫身分證號、帳號或確切金額。想刪除已送出的資料，請到 Threads 私訊我們。</p></details>
+      <details><summary>分析工具背後用了哪些資料？</summary><p>目前收錄台灣 14 部稅法與美國 16 份 IRS 文件，每週自動比對官方來源是否更新。完整的問答工具仍在受邀測試階段。</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="join" class="alt">
+  <div class="wrap join">
+    <div class="rv">
+      <div class="label">Waitlist · 候補登記</div>
+      <h2>留下 Email，開放時通知你</h2>
+      <p class="lede">也可以寫下你想了解的主題。我們只能回覆公開法規資訊與出處，無法就個人情況提供申報建議。</p>
+      <p class="lede" style="font-size:.9rem">日常的分享與問答都在 Threads，那裡回覆最快：</p>
+      <a class="threads-btn" href="__THREADS__" target="_blank" rel="noopener" aria-label="Threads @taiwan.us.tax">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="__THREADS_ICON__"/></svg>
+        <span>@taiwan.us.tax</span>
+      </a>
+    </div>
+    <div class="card rv">
+      <form id="f">
+        <label for="plan" style="margin-top:0">有興趣的方案</label>
+        <select id="plan">
+          <option>完整健檢報告 US$99</option>
+          <option>申報協助候補</option>
+          <option>分析工具試用</option>
+          <option>其他詢問</option>
+        </select>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required autocomplete="email">
+        <label for="need">想了解的主題（選填）</label>
+        <textarea id="need" placeholder="例：想了解 FBAR 與 Form 8938 的差別…"></textarea>
+        <label class="chk" id="attachRow"><input type="checkbox" id="attach"><span>一併附上我剛才的健檢回答，方便回信時參考</span></label>
+        <input class="hp" type="text" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" id="btn" type="submit">送 出</button>
+        <div class="err" id="err" role="alert"></div>
+      </form>
+      <div class="ok" id="ok" role="status">✓ 已收到，如同一枚落好的印。開放時會寄信通知。</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    台美報稅 Taiwan-US Tax ・ 服務籌備中，尚未持照，正與持照會計師洽談合作。<br>
+    本站內容與工具皆為法規資訊分享，非專業稅務建議。 Research aid, not professional tax advice.
+  </div>
+</footer>
+
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  // Nav shadow once scrolled
+  const nav = $('#nav');
+  const onScroll = () => nav.classList.toggle('stuck', scrollY > 8);
+  addEventListener('scroll', onScroll, {passive: true}); onScroll();
+
+  // Scroll reveal, staggered within a group
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => {
+    es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold: .12, rootMargin: '0px 0px -40px 0px'}) : null;
+  $$('.rv').forEach((el) => {
+    const sibs = $$(':scope > .rv', el.parentElement);
+    el.style.transitionDelay = Math.min(sibs.indexOf(el), 5) * 70 + 'ms';
+    io ? io.observe(el) : el.classList.add('in');
+  });
+
+  // Count-up on the two numbers
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (io && !reduce) {
+    const cio = new IntersectionObserver((es) => es.forEach((e) => {
+      if (!e.isIntersecting) return;
+      cio.unobserve(e.target);
+      const end = +e.target.dataset.count, t0 = performance.now();
+      const tick = (t) => {
+        const p = Math.min((t - t0) / 700, 1);
+        e.target.textContent = Math.round(end * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }), {threshold: .6});
+    $$('[data-count]').forEach((el) => cio.observe(el));
+  }
+
+  // ---- Checkup ---------------------------------------------------------
+  const SRC = {
+    pub54: ['IRS Publication 54', 'https://www.irs.gov/forms-pubs/about-publication-54'],
+    pub519: ['IRS Publication 519', 'https://www.irs.gov/forms-pubs/about-publication-519'],
+    fbar: ['IRS：FBAR 說明', 'https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar'],
+    f8938: ['IRS：Form 8938 與 FBAR 比較', 'https://www.irs.gov/businesses/comparison-of-form-8938-and-fbar-requirements'],
+    f8621: ['IRS：Form 8621', 'https://www.irs.gov/forms-pubs/about-form-8621'],
+    f5471: ['IRS：Form 5471', 'https://www.irs.gov/forms-pubs/about-form-5471'],
+    f3520: ['IRS：來自外國人的贈與', 'https://www.irs.gov/businesses/gifts-from-foreign-person'],
+    sfcp: ['IRS：Streamlined Filing Compliance Procedures', 'https://www.irs.gov/individuals/international-taxpayers/streamlined-filing-compliance-procedures'],
+  };
+  const Q = [
+    {id: 'status', q: '你的美國身分是？', opts: [['citizen', '美國公民'], ['gc', '綠卡持有人'], ['resident', '其他美國稅務居民'], ['none', '都不是']]},
+    {id: 'fbar', q: '2025 年內任何一天，你名下、聯名或有簽署權的非美國金融帳戶，餘額加總是否超過 1 萬美元？', hint: '銀行、證券、部分保單帳戶都算，也包含你有簽署權的公司或家人帳戶；看的是加總，不是單一帳戶。'},
+    {id: 'f8938', q: '你的海外金融資產總值，是否曾在 2025 年內任何時點超過 5 萬美元？', hint: '5 萬美元是最低的一級門檻（住在美國、單獨申報、年底）。符合居住境外條件者為年底 20 萬或年中任一時點 30 萬美元，夫妻合併申報再加倍。答「是」只代表值得查自己適用哪一級。'},
+    {id: 'pfic', q: '你是否持有台灣或其他非美國發行的 ETF、共同基金？', hint: '一般營運中的上市公司個股通常不屬於 PFIC，但控股或投資型公司可能是；透過投資型保單等間接持有的基金也可能算。'},
+    {id: 'corp', q: '你是否直接、間接或與家人合計持有非美國公司 10% 以上的股份，或擔任非美國公司的董事、經理人？', hint: '例如自己或家族的台灣公司；比例看表決權或價值。'},
+    {id: 'gift', q: '2025 年內是否從非美國人（例如父母）收到合計超過 10 萬美元的贈與或遺產？', hint: '10 萬美元是來自外國個人或遺產的門檻，相關人的贈與要合併計算。款項若來自外國公司或合夥，2025 年門檻為 20,116 美元；來自外國信託的分配另有規定。'},
+    {id: 'missed', q: '過去是否有年度應申報而沒有申報？'},
+  ];
+  const YN = [['y', '是'], ['n', '否'], ['u', '不確定']];
+  const ans = {};
+  const qs = $('#qs'), out = $('#out'), bar = $('#bar'), after = $('#after');
+
+  Q.forEach((it) => {
+    const row = document.createElement('div');
+    row.className = 'qrow'; row.dataset.id = it.id;
+    const p = document.createElement('p'); p.textContent = it.q;
+    if (it.hint) { const s = document.createElement('small'); s.textContent = it.hint; p.appendChild(s); }
+    const seg = document.createElement('div'); seg.className = 'seg'; seg.setAttribute('role', 'group'); seg.setAttribute('aria-label', it.q);
+    (it.opts || YN).forEach(([v, t]) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.textContent = t; b.dataset.v = v; b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', () => {
+        ans[it.id] = v;
+        $$('button', seg).forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+        render();
+      });
+      seg.appendChild(b);
+    });
+    row.append(p, seg); qs.appendChild(row);
+  });
+
+  const item = (title, body, src, warn) => ({title, body, src, warn});
+  function results() {
+    const r = [], hit = (k) => ans[k] === 'y' || ans[k] === 'u';
+    if (!ans.status) return r;
+    if (ans.status === 'none') {
+      r.push(item('請先確認身分', '這份健檢以美國公民、綠卡持有人與美國稅務居民為對象。在美國出生、父母之一為美國公民、綠卡未正式放棄（即使已過期或久未入境）、或在美停留天數達實質居留測試者，都可能仍是美國稅務居民。非居民若有美國來源所得，另有 1040-NR 的規定。', 'pub519'));
+      return r;
+    }
+    r.push(item('全球所得申報（Form 1040）', '美國公民與稅務居民不論住在哪裡，原則上都要就全球所得申報，包含台灣的薪資與投資收入。', 'pub54'));
+    if (hit('fbar')) r.push(item('FBAR（FinCEN Form 114）', '海外金融帳戶在年度中任何時點合計超過 1 萬美元時的申報。它與所得稅申報分開提交。', 'fbar'));
+    if (hit('f8938')) r.push(item('Form 8938（FATCA）', '特定海外金融資產超過門檻時，隨所得稅申報一併揭露。門檻從 5 萬到 60 萬美元不等，依申報身分與是否符合居住境外條件而定，請對照自己適用哪一級。', 'f8938'));
+    if (hit('pfic')) r.push(item('Form 8621（PFIC）', '非美國發行的 ETF 與共同基金常被歸類為 PFIC，有專屬的申報表與計稅方式。是否每年都要申報另有金額與交易條件。', 'f8621'));
+    if (hit('corp')) r.push(item('Form 5471（外國公司）', '持有特定比例外國公司股份，或擔任其董事、經理人的美國人，可能需要申報公司資訊。持股計算包含間接與歸屬持有，適用類別的判定相當細。', 'f5471'));
+    if (hit('gift')) r.push(item('Form 3520（外國贈與）', '從非美國人收到超過 10 萬美元的贈與或遺產時的資訊申報。屬於申報義務，不等於要繳稅。', 'f3520'));
+    if (hit('missed')) r.push(item('過去年度的補報程序', 'IRS 設有 Streamlined 等正式程序處理非蓄意的漏報。是否符合資格需個案判斷，適用哪一種差別很大，這一項建議優先找持照專業人士確認。', 'sfcp', true));
+    const left = Q.length - Object.keys(ans).length;
+    r.push(item(left ? '還有 ' + left + ' 題未作答' : '這份清單不是全部', '這七題沒有涵蓋所有申報義務，例如外國信託、合夥、自雇所得。沒有出現在清單上，不代表不需要申報。', 'pub54', true));
+    return r;
+  }
+  function render() {
+    const n = Object.keys(ans).length;
+    bar.style.width = Math.round(n / Q.length * 100) + '%';
+    const r = results();
+    out.textContent = '';
+    if (!r.length) {
+      const li = document.createElement('li'); li.className = 'empty'; li.style.cssText = 'border:none;animation:none';
+      li.textContent = '先回答左邊第一題。'; out.appendChild(li);
+    }
+    r.forEach((it, i) => {
+      const li = document.createElement('li'); if (it.warn) li.className = 'warn';
+      li.style.animationDelay = i * 50 + 'ms';
+      const b = document.createElement('b'); b.textContent = it.title;
+      const s = document.createElement('span'); s.textContent = it.body + ' ';
+      const a = document.createElement('a'); a.href = SRC[it.src][1]; a.target = '_blank'; a.rel = 'noopener'; a.textContent = '出處：' + SRC[it.src][0] + ' ↗';
+      li.append(b, s, a); out.appendChild(li);
+    });
+    const done = ans.status && ans.status !== 'none' && n === Q.length;
+    after.style.display = done ? 'block' : 'none';
+    $('#attachRow').style.display = n ? 'flex' : 'none';
+  }
+
+  // ---- Plan pre-select + form -----------------------------------------
+  $$('[data-plan]').forEach((a) => a.addEventListener('click', () => {
+    const sel = $('#plan');
+    [...sel.options].forEach((o) => { if (o.textContent === a.dataset.plan) sel.value = o.value; });
+    setTimeout(() => $('#email').focus({preventScroll: true}), 600);
+  }));
+
+  $('#f').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = $('#btn'), err = $('#err');
+    btn.disabled = true; err.style.display = 'none';
+    let need = '[方案：' + $('#plan').value + '] ' + $('#need').value;
+    if ($('#attach').checked) {
+      const lab = {y: '是', n: '否', u: '不確定'};
+      need += '\n[健檢回答] ' + Q.filter((q) => ans[q.id]).map((q) => {
+        const v = ans[q.id], t = q.opts ? (q.opts.find((o) => o[0] === v) || [])[1] : lab[v];
+        return q.id + '=' + t;
+      }).join('；');
+    }
+    try {
+      const r = await fetch('__API__', {
+        method: 'POST',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify({email: $('#email').value, need, website: $('#website').value, source: 'landing'}),
+      });
+      const d = await r.json();
+      if (!d.ok) throw new Error(d.error || 'failed');
+      $('#f').style.display = 'none';
+      $('#ok').style.display = 'block';
+    } catch (ex) {
+      err.textContent = '送出失敗：' + ex.message + '，請稍後再試或直接到 Threads 私訊。';
+      err.style.display = 'block';
+      btn.disabled = false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
